@@ -7,15 +7,17 @@
   <div class="site-container">
     @include('partials/header.html')
     <main class="main">
-      <picture>
-        <source srcset="img/cover.avif" type="image/avif">
-        <source srcset="img/cover.webp" type="image/webp">
-        <img loading="lazy" src="img/cover.jpg" class="image" width="300" height="300" alt="Обложка канала MaxGraph">
-      </picture>
+      @include('partials/hero.html')
+      @include('partials/about.html')
+      @include('partials/portfolio.html')
+      @include('partials/price.html')
     </main>
 
     @include('partials/footer.html')
-    <!-- @include('html/h1.html') пример include -->
+    <div class="hero__decor hero__decor--first"></div>
+    <div class="hero__decor hero__decor--second"></div>
+    <div class="about__decor about__decor--first"></div>
+    <div class="about__decor about__decor--second"></div>
   </div>
 </body>
 

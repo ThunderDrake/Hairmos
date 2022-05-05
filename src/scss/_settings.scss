@@ -10,8 +10,10 @@ html {
 
 .page {
   height: 100%;
-  font-family: var(--font-family, sans-serif);
+  font-family: var(--font-family-main, sans-serif);
   -webkit-text-size-adjust: 100%;
+  color: var(--black-color);
+  background-color: var(--background-color);
 }
 
 .page__body {
@@ -32,6 +34,7 @@ a {
 }
 
 .site-container {
+  position: relative;
   overflow: hidden; // если используете на сайте position: sticky - уберите эту настройку
 }
 

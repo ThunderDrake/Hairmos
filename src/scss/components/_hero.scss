@@ -1,0 +1,103 @@
+.hero {
+  position: relative;
+  margin-bottom: 135px;
+
+  &__container {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1920px;
+  }
+
+  &__big-image {
+    position: relative;
+    display: inline-block;
+    flex-shrink: 0;
+    overflow: hidden;
+    margin-right: 20px;
+  }
+
+  &__big-image-image {
+    display: block;
+  }
+
+  &__big-image-decor {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(50%, -50%);
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding-top: calc(var(--header-height) + 40px);
+    padding-right: max(15px, calc((100% - var(--content-width)) / 2));
+    height: 100%;
+  }
+
+  &__image--first {
+    align-self: flex-start;
+    margin-left: 40px;
+  }
+
+  &__image--second {
+    margin-bottom: 38px;
+    margin-left: 90px;
+  }
+
+  &__title {
+    position: relative;
+    margin-bottom: 6px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: -24px;
+      width: 70px;
+      height: 70px;
+      background-image: url("../img/sprite.svg#star");
+      background-repeat: no-repeat;
+      transform: translateY(-100%);
+    }
+  }
+
+  &__subtitle {
+    font-family: var(--font-family-second);
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: var(--black-color);
+  }
+
+  &__button {
+    margin-right: 0;
+    margin-left: auto;
+  }
+
+  &__decor {
+    position: absolute;
+
+    &--first {
+      right: -25px;
+      top: 162px;
+      border-radius: 50%;
+      width: 277px;
+      height: 277px;
+      background-color: var(--biloba-color);
+      filter: blur(170px);
+    }
+
+    &--second {
+      right: -90px;
+      top: 450px;
+      border-radius: 50%;
+      width: 250px;
+      height: 250px;
+      background: rgba(239 156 153 / 100%);
+      filter: blur(250px);
+    }
+  }
+}

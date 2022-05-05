@@ -1,0 +1,89 @@
+.portfolio {
+  margin-bottom: 200px;
+
+  &__container {
+    margin: 0 auto;
+    padding-right: 100px;
+    padding-left: 100px;
+    max-width: 1920px;
+  }
+
+  &__slider-slide {
+    position: relative;
+    margin-bottom: 50px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      opacity: 0.5;
+      transition: opacity var(--transition-time);
+    }
+
+    img {
+      transform: scale(0.95);
+      transition: all var(--transition-time);
+    }
+  }
+
+  &__slider-wrapper {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .swiper-slide-active {
+    &::before {
+      opacity: 0;
+    }
+
+    img {
+      transform: scale(1.15);
+    }
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 73px;
+    height: 73px;
+    transform: translateY(-50%);
+
+    &::after {
+      content: none;
+    }
+
+    &__icon {
+      width: 18px;
+      height: 36px;
+      fill: transparent;
+      stroke: #fffafa;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 5px;
+    }
+  }
+
+  .swiper-button-next {
+    right: 31%;
+  }
+
+  .swiper-button-prev {
+    left: 31%;
+  }
+
+  .swiper-pagination {
+    --swiper-pagination-bullet-width: 16px;
+    --swiper-pagination-bullet-height: 16px;
+    --swiper-pagination-color: var(--accent-color);
+    --swiper-pagination-bullet-horizontal-gap: 7.5px;
+
+    position: static;
+    z-index: 5;
+  }
+}

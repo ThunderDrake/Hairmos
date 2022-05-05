@@ -1,0 +1,41 @@
+.button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 258px;
+  height: 133px;
+
+  .inner-element {
+    position: absolute;
+    left: -14px;
+    top: 18px;
+    z-index: 2;
+    width: 18px;
+    height: 18px;
+  }
+
+  .outer-element {
+    position: absolute;
+    left: -9px;
+    top: -9px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+  }
+
+  &-text {
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 140%;
+    letter-spacing: 0.095em;
+    text-transform: uppercase;
+  }
+
+  svg {
+    position: absolute;
+  }
+}

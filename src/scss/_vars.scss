@@ -3,8 +3,10 @@
   --font-family-main: "Montserrat", sans-serif;
   --font-family-second: "NeutralFace", sans-serif;
   --content-width: 1220px;
+  --content-fluid-width: 1790px;
   --container-offset: 15px;
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  --container-fluid-width: calc(var(--content-fluid-width) + (var(--container-offset) * 2));
 
   // colors
   --light-color: #fff;
@@ -14,4 +16,7 @@
   --gray-color: #c4c4c4;
   --sea-pink-color: #ef9c99;
   --biloba-color: #c999ef;
+
+  // animations
+  --transition-time: 0.3s;
 }

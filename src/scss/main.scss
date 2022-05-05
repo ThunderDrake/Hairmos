@@ -5,12 +5,14 @@
 @import "settings";
 
 // подключения компонентов страницы
+@import "./components/burger";
+@import "./components/nav";
+@import "./components/logo";
+@import "./components/title";
+@import "./components/button";
 @import "./components/header";
-
-// тестовые стили, удалите их
-.page__body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: var(--vh);
-}
+@import "./components/hero";
+@import "./components/about";
+@import "./components/portfolio";
+@import "./components/price";
+@import "./components/tabs";
