@@ -11,13 +11,32 @@
       @include('partials/about.html')
       @include('partials/portfolio.html')
       @include('partials/price.html')
+      @include('partials/callback.html')
+      @include('partials/contacts.html')
+      <a data-scroll data-scroll-anchor href="#" class="to-up btn-reset">
+        <svg class="to-up__icon">
+          <use xlink:href="img/sprite.svg#up"></use>
+        </svg>
+      </a>
     </main>
 
-    @include('partials/footer.html')
+
     <div class="hero__decor hero__decor--first"></div>
     <div class="hero__decor hero__decor--second"></div>
     <div class="about__decor about__decor--first"></div>
     <div class="about__decor about__decor--second"></div>
+    <div class="price__decor price__decor--first"></div>
+    <div class="price__decor price__decor--second"></div>
+    <div class="price__decor price__decor--third"></div>
+    <div class="price__decor price__decor--fourth"></div>
+    <div class="callback__decor callback__decor--first"></div>
+    <div class="callback__decor callback__decor--second"></div>
+    <div class="callback__decor callback__decor--third"></div>
+    <div class="callback__decor callback__decor--fourth"></div>
+    <div class="contacts__decor contacts__decor--first"></div>
+    <div class="contacts__decor contacts__decor--second"></div>
+
+    @include('partials/footer.html')
   </div>
 </body>
 

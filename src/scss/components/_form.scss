@@ -1,0 +1,53 @@
+.form {
+  max-width: 570px;
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 35px;
+    line-height: 130%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #0f0f0f;
+  }
+
+  &__subtitle {
+    margin: 0 auto;
+    margin-bottom: 40px;
+    max-width: 495px;
+    font-size: 25px;
+    line-height: 120%;
+    text-align: center;
+    color: #0f0f0f;
+  }
+
+  &__input {
+    margin-bottom: 28px;
+    border: 1px solid var(--black-color);
+    padding: 20px 30px;
+    width: 100%;
+    font-size: 17px;
+    line-height: 120%;
+    color: var(--black-color);
+    background-color: transparent;
+
+    &--tel {
+      margin-bottom: 0;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+    margin-bottom: 15px;
+  }
+
+  &__privacy {
+    font-size: 20px;
+    line-height: 120%;
+    color: #707070;
+
+    &-link {
+      display: block;
+      color: var(--accent-color);
+    }
+  }
+}
