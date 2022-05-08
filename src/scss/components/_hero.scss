@@ -3,47 +3,163 @@
   margin-bottom: 135px;
 
   &__container {
-    display: flex;
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: max-content auto;
+    grid-template-rows: repeat(2, auto);
     margin: 0 auto;
+    padding-right: min(340px, max(15px, calc((100% - var(--content-width)) / 2)));
     max-width: 1920px;
+
+    @include mq(768px) {
+      grid-template-columns: auto;
+      grid-template-rows: repeat(3, auto);
+      padding-right: 0;
+    }
   }
 
   &__big-image {
     position: relative;
-    display: inline-block;
-    flex-shrink: 0;
+    align-self: baseline;
+    grid-row: 1 / span 2;
     overflow: hidden;
-    margin-right: 20px;
+
+    @include mq(1250px) {
+      grid-row: 2;
+    }
+
+    @include mq(768px) {
+      grid-column: span 2;
+    }
   }
 
   &__big-image-image {
     display: block;
+
+    @include mq(1640px) {
+      width: 580px;
+    }
+
+    @include mq(1350px) {
+      width: 520px;
+      height: 850px;
+    }
+
+    @include mq(1180px) {
+      height: auto;
+    }
+
+    @include mq(1024px) {
+      width: 440px;
+    }
+
+    @include mq(768px) {
+      width: 100%;
+      max-height: 350px;
+    }
   }
 
   &__big-image-decor {
     position: absolute;
-    right: 0;
+    right: -2px;
     top: 50%;
     transform: translate(50%, -50%);
+
+    @include mq(1350px) {
+      svg {
+        width: 540px;
+      }
+    }
+
+    @include mq(1024px) {
+      svg {
+        width: 440px;
+      }
+    }
+
+    @include mq(768px) {
+      left: 0;
+      right: 0;
+      transform: rotate(90deg);
+    }
+
+    @include mq(480px) {
+      top: 0;
+
+      svg {
+        width: 320px;
+      }
+    }
   }
 
   &__content {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    padding-top: calc(var(--header-height) + 40px);
-    padding-right: max(15px, calc((100% - var(--content-width)) / 2));
+    grid-column-start: 2;
+    grid-row-start: 2;
     height: 100%;
+
+    picture:nth-child(2) {
+      flex-grow: 1;
+    }
+
+    picture {
+      @include mq(1180px) {
+        display: none;
+      }
+    }
+
+    @include mq(1180px) {
+      display: block;
+      padding-top: 100px;
+    }
+
+    @include mq(1024px) {
+      padding-top: 80px;
+    }
+
+    @include mq(768px) {
+      grid-column: span 2;
+      grid-row: 3;
+      padding-top: 20px;
+    }
+
+    @include mq(768px) {
+      padding: 20px 15px 0;
+    }
   }
 
   &__image--first {
     align-self: flex-start;
-    margin-left: 40px;
+    margin-left: 63px;
+
+    @include mq(1640px) {
+      margin-left: 30px;
+    }
+
+    @include mq(1350px) {
+      width: 80%;
+    }
+
+    @include mq(1180px) {
+      display: none;
+    }
   }
 
   &__image--second {
+    display: block;
+    margin-right: 0;
     margin-bottom: 38px;
-    margin-left: 90px;
+    margin-left: auto;
+
+    @include mq(1350px) {
+      width: 340px;
+    }
+
+    @include mq(1180px) {
+      display: none;
+    }
   }
 
   &__title {
@@ -60,16 +176,51 @@
       background-image: url("../img/sprite.svg#star");
       background-repeat: no-repeat;
       transform: translateY(-100%);
+
+      @include mq(1024px) {
+        width: 55px;
+        height: 55px;
+      }
+
+      @include mq(768px) {
+        display: none;
+      }
+    }
+
+    @include mq(1024px) {
+      margin-bottom: 10px;
+    }
+
+    @include mq(768px) {
+      padding: 0 15px;
+    }
+
+    @include mq(480px) {
+      padding: 0;
     }
   }
 
   &__subtitle {
+    margin-bottom: 20px;
     font-family: var(--font-family-second);
     font-weight: 700;
     font-size: 35px;
     line-height: 140%;
     text-transform: uppercase;
     color: var(--black-color);
+
+    @include mq(1640px) {
+      font-size: 31px;
+    }
+
+    @include mq(768px) {
+      padding: 0 15px;
+    }
+
+    @include mq(480px) {
+      padding: 0;
+      font-size: 20px;
+    }
   }
 
   &__button {
@@ -79,6 +230,7 @@
 
   &__decor {
     position: absolute;
+    z-index: -1;
 
     &--first {
       right: -25px;

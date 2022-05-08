@@ -1,11 +1,17 @@
 .nav {
-  margin-right: 250px;
-  margin-left: auto;
-
   &__list {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  &__close {
+    display: none;
+
+    &-icon {
+      width: 30px;
+      height: 30px;
+    }
   }
 
   &__item {

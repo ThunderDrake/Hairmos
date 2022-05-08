@@ -5,14 +5,44 @@
   justify-content: center;
   width: 258px;
   height: 133px;
+  color: var(--black-color);
+
+  .inner-svg {
+    fill: transparent;
+    stroke: #000;
+    transition: all var(--transition-time);
+    pointer-events: none;
+
+    @include mq(480px) {
+      width: 190px;
+      height: 76px;
+    }
+  }
+
+  .outer-svg {
+    pointer-events: none;
+
+    @include mq(480px) {
+      width: 190px;
+      height: 97px;
+    }
+  }
 
   .inner-element {
     position: absolute;
     left: -14px;
     top: 18px;
     z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 18px;
     height: 18px;
+
+    @include mq(480px) {
+      left: -8px;
+      top: 0;
+    }
   }
 
   .outer-element {
@@ -28,14 +58,37 @@
   }
 
   &-text {
+    z-index: 1;
     font-weight: 500;
     font-size: 17px;
     line-height: 140%;
     letter-spacing: 0.095em;
     text-transform: uppercase;
+    transition: color var(--transition-time);
+    pointer-events: none;
+
+    @include mq(480px) {
+      font-size: 15px;
+    }
   }
 
   svg {
     position: absolute;
+  }
+
+  &:hover {
+    .inner-svg {
+      fill: #e8a29f;
+      stroke: none;
+    }
+
+    .button-text {
+      color: var(--light-color);
+    }
+  }
+
+  @include mq(480px) {
+    width: 190px;
+    height: 97px;
   }
 }

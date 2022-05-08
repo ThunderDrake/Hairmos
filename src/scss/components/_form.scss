@@ -8,6 +8,14 @@
     text-align: center;
     text-transform: uppercase;
     color: #0f0f0f;
+
+    @include mq(920px) {
+      font-size: 25px;
+    }
+
+    @include mq(480px) {
+      font-size: 20px;
+    }
   }
 
   &__subtitle {
@@ -18,6 +26,14 @@
     line-height: 120%;
     text-align: center;
     color: #0f0f0f;
+
+    @include mq(920px) {
+      font-size: 20px;
+    }
+
+    @include mq(480px) {
+      font-size: 15px;
+    }
   }
 
   &__input {
@@ -49,5 +65,21 @@
       display: block;
       color: var(--accent-color);
     }
+
+    @include mq(920px) {
+      font-size: 15px;
+    }
+
+    @include mq(480px) {
+      font-size: 13px;
+    }
+  }
+
+  @include mq(920px) {
+    max-width: 400px;
+  }
+
+  @include mq(620px) {
+    max-width: none;
   }
 }

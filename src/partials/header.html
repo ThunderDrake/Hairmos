@@ -6,11 +6,16 @@
       </svg>
     </button>
     <nav class="header__nav nav" title="Меню сайта" data-menu>
+      <button class="nav__close btn-reset" aria-label="Закрыть меню" data-menu-close>
+        <svg class="nav__close-icon">
+          <use xlink:href="img/sprite.svg#close"></use>
+        </svg>
+      </button>
       <ul class="nav__list list-reset">
-        <li class="nav__item"><a data-scroll data-scroll-anchor data-menu-item href="#about" class="nav__link">О нас</a></li>
-        <li class="nav__item"><a data-scroll data-scroll-anchor data-menu-item href="#portfolio" class="nav__link">Фото работ</a></li>
-        <li class="nav__item"><a data-scroll data-scroll-anchor data-menu-item href="#price" class="nav__link">Услуги</a></li>
-        <li class="nav__item"><a data-scroll data-scroll-anchor data-menu-item href="#contacts" class="nav__link">Контакты</a></li>
+        <li class="nav__item"><a data-scroll data-menu-item href="#about" class="nav__link">О нас</a></li>
+        <li class="nav__item"><a data-scroll data-menu-item href="#portfolio" class="nav__link">Фото работ</a></li>
+        <li class="nav__item"><a data-scroll data-menu-item href="#price" class="nav__link">Услуги</a></li>
+        <li class="nav__item"><a data-scroll data-menu-item href="#contacts" class="nav__link">Контакты</a></li>
       </ul>
     </nav>
     <div class="header__logo logo">

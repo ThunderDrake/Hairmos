@@ -6,11 +6,17 @@
     padding-right: 100px;
     padding-left: 100px;
     max-width: 1920px;
+
+    @include mq(1750px) {
+      padding: 0;
+    }
   }
 
   &__slider-slide {
     position: relative;
     margin-bottom: 50px;
+    transform: scale(0.95);
+    transition: all var(--transition-time);
 
     &::before {
       content: "";
@@ -25,11 +31,22 @@
       background-color: #fff;
       opacity: 0.5;
       transition: opacity var(--transition-time);
+
+      @include mq(1200px) {
+        width: 90%;
+      }
+
+      @include mq(910px) {
+        width: 100%;
+      }
     }
 
-    img {
-      transform: scale(0.95);
-      transition: all var(--transition-time);
+    @include mq(910px) {
+      transform: scale(0.85);
+    }
+
+    @include mq(768px) {
+      margin-bottom: 10px;
     }
   }
 
@@ -39,12 +56,14 @@
   }
 
   .swiper-slide-active {
+    transform: scale(1.15);
+
     &::before {
       opacity: 0;
     }
 
-    img {
-      transform: scale(1.15);
+    @include mq(910px) {
+      transform: scale(1);
     }
   }
 
@@ -71,10 +90,42 @@
 
   .swiper-button-next {
     right: 31%;
+
+    @include mq(1200px) {
+      right: 22%;
+    }
+
+    @include mq(910px) {
+      right: 20%;
+    }
+
+    @include mq(480px) {
+      right: 15%;
+    }
+
+    @include mq(375px) {
+      right: 15px;
+    }
   }
 
   .swiper-button-prev {
     left: 31%;
+
+    @include mq(1200px) {
+      left: 15.5%;
+    }
+
+    @include mq(910px) {
+      left: 20%;
+    }
+
+    @include mq(480px) {
+      left: 15%;
+    }
+
+    @include mq(375px) {
+      left: 15px;
+    }
   }
 
   .swiper-pagination {
@@ -85,5 +136,14 @@
 
     position: static;
     z-index: 5;
+
+    @include mq(768px) {
+      --swiper-pagination-bullet-width: 10px;
+      --swiper-pagination-bullet-height: 10px;
+    }
+  }
+
+  @include mq(768px) {
+    margin-bottom: 100px;
   }
 }

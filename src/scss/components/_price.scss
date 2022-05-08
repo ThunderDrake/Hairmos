@@ -27,6 +27,7 @@
 
   &__decor {
     position: absolute;
+    z-index: -1;
 
     &--first {
       left: -56px;
@@ -47,7 +48,7 @@
     }
 
     &--third {
-      right: 0px;
+      right: 0;
       top: 3141px;
       width: 252px;
       height: 254px;

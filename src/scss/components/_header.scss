@@ -1,14 +1,83 @@
 .header {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
+  position: relative;
   z-index: 5;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  grid-column-start: 2;
+  margin-bottom: 40px;
+  padding: 5px max(15px, calc((100% - var(--content-width)) / 2)) 5px 63px;
 
   &__container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 0;
+
+    @include mq(690px) {
+      padding: 0 15px;
+    }
   }
+
+  &__nav {
+    transform: translateY(-100%);
+    transition: transform var(--transition-time);
+
+    @include mq(690px) {
+      position: absolute;
+      left: 0;
+      top: 0;
+      padding: 30px;
+      background-color: #fff;
+
+      .nav__list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav__item {
+        margin-right: 0;
+
+        &:not(:last-child) {
+          margin-bottom: 40px;
+        }
+      }
+
+      .nav__close {
+        display: block;
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  @include mq(1520px) {
+    padding-left: 30px;
+  }
+
+  @include mq(1250px) {
+    grid-column: span 2;
+  }
+
+  @include mq(690px) {
+    padding: 0;
+  }
+
+  @include mq(480px) {
+    margin-bottom: 20px;
+  }
+}
+
+.nav__bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--black-color);
+  opacity: 0.8;
+}
+
+.menu--active {
+  transform: translateY(0);
 }

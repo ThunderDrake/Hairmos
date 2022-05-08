@@ -5,6 +5,10 @@
     display: grid;
     column-gap: 20px;
     grid-template-columns: repeat(12, 1fr);
+
+    @include mq(768px) {
+      grid-template-columns: none;
+    }
   }
 
   &__map {
@@ -22,6 +26,36 @@
       border: 1px solid var(--accent-color);
       width: 100%;
       height: 100%;
+
+      @include mq(768px) {
+        width: 98%;
+      }
+
+      @include mq(480px) {
+        left: 5px;
+        top: 5px;
+      }
+    }
+
+    @include mq(1210px) {
+      align-self: baseline;
+      grid-column: 6 span;
+    }
+
+    @include mq(860px) {
+      align-self: initial;
+
+      .image {
+        height: 100%;
+      }
+    }
+
+    @include mq(768px) {
+      grid-row: 2;
+
+      .image {
+        width: 98%;
+      }
     }
   }
 
@@ -29,10 +63,52 @@
     grid-column: 5 span;
     padding-top: 32px;
     padding-left: 70px;
+
+    @include mq(1210px) {
+      grid-column: 6 span;
+    }
+
+    @include mq(1024px) {
+      padding-left: 20px;
+    }
+
+    @include mq(768px) {
+      grid-row: 1;
+      padding: 0;
+    }
   }
 
   &__title {
     margin-bottom: 50px;
+
+    @include mq(768px) {
+      text-align: center;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: calc(-70% - 65px);
+        top: 50%;
+        z-index: -1;
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: var(--accent-color);
+        transform: translate(0, -50%);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: calc(-70% - 65px);
+        top: 50%;
+        z-index: -1;
+        width: 100%;
+        height: 1px;
+        background-color: var(--accent-color);
+        transform: translate(0, -50%);
+      }
+    }
   }
 
   &__list {
@@ -40,6 +116,22 @@
     column-gap: 50px;
     grid-template-columns: repeat(2, auto);
     row-gap: 60px;
+
+    @include mq(1024px) {
+      column-gap: 20px;
+      row-gap: 20px;
+    }
+
+    @include mq(768px) {
+      column-gap: 15px;
+      grid-template-columns: repeat(4, 1fr);
+      margin-bottom: 30px;
+    }
+
+    @include mq(660px) {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 25px;
+    }
   }
 
   &__icon {
@@ -54,6 +146,14 @@
 
     &--adress {
       width: 220px;
+
+      @include mq(860px) {
+        width: 160px;
+      }
+
+      @include mq(860px) {
+        width: auto;
+      }
     }
 
     &--link {
@@ -65,6 +165,10 @@
 
     &--phone {
       text-decoration: none;
+    }
+
+    @include mq(660px) {
+      font-size: 15px;
     }
   }
 
@@ -88,6 +192,7 @@
 
   &__decor {
     position: absolute;
+    z-index: -1;
 
     &--first {
       left: -38px;
@@ -106,5 +211,13 @@
       background: rgba(2393 156 153 / 80%);
       filter: blur(250px);
     }
+  }
+
+  @include mq(768px) {
+    margin-bottom: 80px;
+  }
+
+  @include mq(480px) {
+    margin-bottom: 40px;
   }
 }
