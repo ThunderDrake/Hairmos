@@ -1,5 +1,6 @@
 .footer {
   padding: 60px 0;
+  padding-bottom: 20px;
   background-color: var(--accent-color);
 
   &__container {
@@ -106,6 +107,25 @@
 
     @include mq(375px) {
       display: none;
+    }
+  }
+
+  &__author {
+    justify-self: flex-end;
+    grid-column: 3;
+    margin-top: 40px;
+    font-size: 10px;
+    color: var(--background-color);
+    opacity: 0.5;
+
+    @include mq(768px) {
+      grid-column: 2 span;
+      grid-row: 3;
+    }
+
+    @include mq(480px) {
+      justify-self: flex-start;
+      margin-top: 20px;
     }
   }
 }

@@ -2033,6 +2033,7 @@ a {
 
 .footer {
   padding: 60px 0;
+  padding-bottom: 20px;
   background-color: var(--accent-color);
 }
 .footer__container {
@@ -2161,6 +2162,29 @@ a {
 @media (max-width: 375px) {
   .footer__nav {
     display: none;
+  }
+}
+.footer__author {
+  justify-self: flex-end;
+  -ms-grid-column: 3;
+  grid-column: 3;
+  margin-top: 40px;
+  font-size: 10px;
+  color: var(--background-color);
+  opacity: 0.5;
+}
+@media (max-width: 768px) {
+  .footer__author {
+    -ms-grid-column-span: 2;
+    grid-column: 2 span;
+    -ms-grid-row: 3;
+    grid-row: 3;
+  }
+}
+@media (max-width: 480px) {
+  .footer__author {
+    justify-self: flex-start;
+    margin-top: 20px;
   }
 }
 /*# sourceMappingURL=main.css.map */
