@@ -1,6 +1,9 @@
 import SmoothScroll from 'smooth-scroll';
 const scroll = new SmoothScroll('[data-scroll-anchor]',{
   offset: 150,
+  speed: 500,
+	// speedAsDuration: true,
+  easing: 'easeInOutQuart',
 });
 
 const upButton = document.querySelector('.to-up');

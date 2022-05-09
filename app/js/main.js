@@ -1440,6 +1440,8 @@ console.log((0,_functions_mobile_check__WEBPACK_IMPORTED_MODULE_0__.mobileCheck)
 // };
 // validateForms('.form-1', rules1, afterForm);
 
+console.log();
+
 /***/ }),
 
 /***/ "./src/js/_vars.js":
@@ -1658,57 +1660,65 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_1__);
 
 
-var bigImageContainer = document.querySelector('.hero__big-image');
-var bigImage = bigImageContainer.querySelector('.hero__big-image-image');
-var header = document.querySelector('.header');
-var firstImageContainer = document.querySelector('.hero__image-wrapper--first');
-var firstImage = firstImageContainer.querySelector('.hero__image');
-var secondImageContainer = document.querySelector('.hero__image-wrapper--second');
-var secondImage = secondImageContainer.querySelector('.hero__image');
-var title = document.querySelector('.hero__title');
-var subtitle = document.querySelector('.hero__subtitle');
-var button = document.querySelector('.hero__button');
-var tl = animejs__WEBPACK_IMPORTED_MODULE_0__["default"].timeline({
-  easing: 'easeInOutQuad',
-  duration: 500
-});
-tl.add({
-  targets: title,
-  opacity: 1,
-  translateY: [50, 0]
-}).add({
-  targets: subtitle,
-  opacity: 1,
-  translateY: [50, 0]
-}, '+=100').add({
-  targets: header,
-  translateY: [-100, 0]
-}, '+=500').add({
-  targets: bigImageContainer,
-  translateX: ['100%', '0']
-}, '-=500').add({
-  targets: bigImage,
-  translateX: ['-100%', '0']
-}, '-=500').add({
-  targets: firstImageContainer,
-  translateY: ['100%', '0']
-}, '-=100').add({
-  targets: firstImage,
-  translateY: ['-100%', '0']
-}, '-=500').add({
-  targets: secondImageContainer,
-  translateX: ['100%', '0']
-}, '-=550').add({
-  targets: secondImage,
-  translateX: ['-100%', '0']
-}, '-=550').add({
-  targets: button,
-  opacity: [0, 1]
-}, '+=150');
-aos__WEBPACK_IMPORTED_MODULE_1___default().init({
-  once: true,
-  offset: 50
-});
+
+var init = function init() {
+  window.onload = function () {
+    var bigImageContainer = document.querySelector('.hero__big-image');
+    var bigImage = bigImageContainer.querySelector('.hero__big-image-image');
+    var header = document.querySelector('.header');
+    var firstImageContainer = document.querySelector('.hero__image-wrapper--first');
+    var firstImage = firstImageContainer.querySelector('.hero__image');
+    var secondImageContainer = document.querySelector('.hero__image-wrapper--second');
+    var secondImage = secondImageContainer.querySelector('.hero__image');
+    var title = document.querySelector('.hero__title');
+    var subtitle = document.querySelector('.hero__subtitle');
+    var button = document.querySelector('.hero__button');
+    var tl = animejs__WEBPACK_IMPORTED_MODULE_0__["default"].timeline({
+      easing: 'easeInOutQuad',
+      duration: 750
+    });
+    tl.add({
+      targets: title,
+      opacity: 1,
+      translateY: [50, 0],
+      delay: 500
+    }).add({
+      targets: subtitle,
+      opacity: 1,
+      translateY: [50, 0]
+    }, '+=100').add({
+      targets: header,
+      translateY: [-100, 0]
+    }, '+=500').add({
+      targets: bigImageContainer,
+      translateX: ['100%', '0']
+    }, '-=500').add({
+      targets: bigImage,
+      translateX: ['-100%', '0']
+    }, '-=750').add({
+      targets: firstImageContainer,
+      translateY: ['100%', '0']
+    }, '-=100').add({
+      targets: firstImage,
+      translateY: ['-100%', '0']
+    }, '-=750').add({
+      targets: secondImageContainer,
+      translateX: ['100%', '0']
+    }, '-=550').add({
+      targets: secondImage,
+      translateX: ['-100%', '0']
+    }, '-=750').add({
+      targets: button,
+      opacity: [0, 1]
+    }, '+=150');
+    aos__WEBPACK_IMPORTED_MODULE_1___default().init({
+      once: true,
+      offset: 50
+    });
+  };
+};
+
+init();
 
 /***/ }),
 
@@ -1780,7 +1790,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var smooth_scroll__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(smooth_scroll__WEBPACK_IMPORTED_MODULE_0__);
 
 var scroll = new (smooth_scroll__WEBPACK_IMPORTED_MODULE_0___default())('[data-scroll-anchor]', {
-  offset: 150
+  offset: 150,
+  speed: 500,
+  // speedAsDuration: true,
+  easing: 'easeInOutQuart'
 });
 var upButton = document.querySelector('.to-up');
 var footer = document.querySelector('.footer');
