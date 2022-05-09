@@ -1809,8 +1809,16 @@ function checkOffset() {
     return rect.top;
   }
 
-  if (getRectTop(upButton) + document.body.scrollTop + upButton.offsetHeight >= getRectTop(footer) + document.body.scrollTop - 10) upButton.style.position = 'absolute';
-  if (document.body.scrollTop + window.innerHeight < getRectTop(footer) + document.body.scrollTop) upButton.style.position = 'fixed'; // restore when you scroll up
+  if (getRectTop(upButton) + document.body.scrollTop + upButton.offsetHeight >= getRectTop(footer) + document.body.scrollTop - 10) {
+    upButton.style.position = 'absolute';
+    upButton.style.bottom = footer.offsetHeight + 'px';
+  }
+
+  if (document.body.scrollTop + window.innerHeight < getRectTop(footer) + document.body.scrollTop) {
+    upButton.style.position = 'fixed'; // restore when you scroll up
+
+    upButton.style.bottom = '5%';
+  }
 }
 
 document.addEventListener("scroll", function () {

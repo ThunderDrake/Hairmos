@@ -119,11 +119,20 @@ a {
   &__icon {
     width: 50px;
     height: 82px;
+
+    @include mq(480px) {
+      width: 45px;
+      height: 60px;
+    }
   }
 
   @include mq(768px) {
     right: 5%;
     bottom: 7%;
+  }
+
+  @include mq(480px) {
+    bottom: 3%;
   }
 }
 
