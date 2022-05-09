@@ -1,5 +1,8 @@
 import { disableScroll } from '../functions/disable-scroll';
 import { enableScroll } from '../functions/enable-scroll';
+import SmoothScroll from 'smooth-scroll';
+
+const linkScroll = new SmoothScroll();
 
 (function(){
   const burger = document?.querySelector('[data-burger]');
@@ -38,7 +41,11 @@ import { enableScroll } from '../functions/enable-scroll';
       burger.classList.remove('burger--active');
       menu.classList.remove('menu--active');
       enableScroll();
-      linkScroll.animateScroll(el.getAttribute('href'));
+      linkScroll.animateScroll(
+        document.querySelector(`${el.getAttribute('href')}`)
+      ), {
+        offset: 150
+      };
     });
   });
 

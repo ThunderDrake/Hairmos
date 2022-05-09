@@ -2,7 +2,7 @@ import SmoothScroll from 'smooth-scroll';
 const scroll = new SmoothScroll('[data-scroll-anchor]',{
   offset: 150,
   speed: 500,
-	// speedAsDuration: true,
+	speedAsDuration: true,
   easing: 'easeInOutQuart',
 });
 

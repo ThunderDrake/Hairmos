@@ -1372,7 +1372,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions_mobile_check__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./functions/mobile-check */ "./src/js/functions/mobile-check.js");
-/* harmony import */ var _functions_header_height__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./functions/header-height */ "./src/js/functions/header-height.js");
 // Данный файл - лишь собрание подключений готовых компонентов.
 // Рекомендуется создавать отдельный файл в папке components и подключать все там
 // Определение операционной системы на мобильных
@@ -1402,9 +1401,9 @@ console.log((0,_functions_mobile_check__WEBPACK_IMPORTED_MODULE_0__.mobileCheck)
 // import GraphTabs from 'graph-tabs';
 // const tabs = new GraphTabs('tab');
 // Получение высоты шапки сайта (не забудьте вызвать функцию)
-
-
-(0,_functions_header_height__WEBPACK_IMPORTED_MODULE_1__.getHeaderHeight)(); // Подключение плагина кастом-скролла
+// import { getHeaderHeight } from './functions/header-height';
+// getHeaderHeight();
+// Подключение плагина кастом-скролла
 // import 'simplebar';
 // Подключение плагина для позиционирования тултипов
 // import { createPopper, right} from '@popperjs/core';
@@ -1510,8 +1509,12 @@ var aboutPath = animejs__WEBPACK_IMPORTED_MODULE_0__["default"].path('#svg-path'
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _functions_disable_scroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../functions/disable-scroll */ "./src/js/functions/disable-scroll.js");
 /* harmony import */ var _functions_enable_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../functions/enable-scroll */ "./src/js/functions/enable-scroll.js");
+/* harmony import */ var smooth_scroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! smooth-scroll */ "./node_modules/smooth-scroll/dist/smooth-scroll.polyfills.min.js");
+/* harmony import */ var smooth_scroll__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(smooth_scroll__WEBPACK_IMPORTED_MODULE_2__);
 
 
+
+var linkScroll = new (smooth_scroll__WEBPACK_IMPORTED_MODULE_2___default())();
 
 (function () {
   var _document, _document2, _document3, _document4, _document5;
@@ -1549,7 +1552,9 @@ __webpack_require__.r(__webpack_exports__);
       burger.classList.remove('burger--active');
       menu.classList.remove('menu--active');
       (0,_functions_enable_scroll__WEBPACK_IMPORTED_MODULE_1__.enableScroll)();
-      linkScroll.animateScroll(el.getAttribute('href'));
+      linkScroll.animateScroll(document.querySelector("".concat(el.getAttribute('href')))), {
+        offset: 150
+      };
     });
   });
   menuClose === null || menuClose === void 0 ? void 0 : menuClose.addEventListener('click', function () {
@@ -1792,7 +1797,7 @@ __webpack_require__.r(__webpack_exports__);
 var scroll = new (smooth_scroll__WEBPACK_IMPORTED_MODULE_0___default())('[data-scroll-anchor]', {
   offset: 150,
   speed: 500,
-  // speedAsDuration: true,
+  speedAsDuration: true,
   easing: 'easeInOutQuart'
 });
 var upButton = document.querySelector('.to-up');
@@ -1876,26 +1881,6 @@ var enableScroll = function enableScroll() {
   });
   _vars__WEBPACK_IMPORTED_MODULE_0__["default"].bodyEl.removeAttribute('data-position');
   _vars__WEBPACK_IMPORTED_MODULE_0__["default"].htmlEl.style.scrollBehavior = 'smooth';
-};
-
-/***/ }),
-
-/***/ "./src/js/functions/header-height.js":
-/*!*******************************************!*\
-  !*** ./src/js/functions/header-height.js ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "getHeaderHeight": () => (/* binding */ getHeaderHeight)
-/* harmony export */ });
-var getHeaderHeight = function getHeaderHeight() {
-  var _document;
-
-  var headerHeight = (_document = document) === null || _document === void 0 ? void 0 : _document.querySelector('.header').offsetHeight;
-  document.querySelector(':root').style.setProperty('--header-height', "".concat(headerHeight, "px"));
 };
 
 /***/ }),
