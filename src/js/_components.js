@@ -5,3 +5,4 @@ import "./components/priceTabs.js";
 import "./components/formValidation.js";
 import "./components/scrollButton.js";
 import "./components/burgerMenu.js";
+import "./components/heroAnimation.js";

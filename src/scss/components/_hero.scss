@@ -130,9 +130,15 @@
     }
   }
 
-  &__image--first {
+  &__image-wrapper--first {
+    position: relative;
     align-self: flex-start;
+    overflow: hidden;
     margin-left: 63px;
+
+    img {
+      display: block;
+    }
 
     @include mq(1640px) {
       margin-left: 30px;
@@ -147,11 +153,17 @@
     }
   }
 
-  &__image--second {
+  &__image-wrapper--second {
+    position: relative;
     display: block;
+    overflow: hidden;
     margin-right: 0;
     margin-bottom: 38px;
     margin-left: auto;
+
+    img {
+      display: block;
+    }
 
     @include mq(1350px) {
       width: 340px;
@@ -165,6 +177,7 @@
   &__title {
     position: relative;
     margin-bottom: 6px;
+    opacity: 0;
 
     &::before {
       content: "";
@@ -208,6 +221,7 @@
     line-height: 140%;
     text-transform: uppercase;
     color: var(--black-color);
+    opacity: 0;
 
     @include mq(1640px) {
       font-size: 31px;
